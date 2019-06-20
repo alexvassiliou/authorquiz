@@ -45,5 +45,6 @@ describe("When testing with Enzyme", () => {
 
     it("contains Hello at 2020-05-08T14:00:00.000Z", () => {
         const wrapper = shallow(<Hello now={moment.toISOString()} />);
+        expect(wrapper.contains(<h1>Hello at 2020-05-08T14:00:00.000Z</h1>)).toBe(true);
     });
 });

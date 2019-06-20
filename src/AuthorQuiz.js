@@ -50,7 +50,7 @@ function Continue ({show, onContinue}) {
   <div className="row continue">
   { show
     ? <div className="col-11">
-        <button className="btn btn-primary btn-lg float-right"></button>
+        <button className="btn btn-primary btn-lg float-right">Continue</button>
       </div>
       : null }
   </div>
@@ -76,12 +76,12 @@ function Book ({title, onClick}){
 
 }
 
-function AuthorQuiz({turnData, highlight,onAnswerSelected}) {
+function AuthorQuiz({turnData, highlight, onAnswerSelected, onContinue}) {
   return (
     <div className="container-fluid">
       <Hero />
       <Turn {...turnData} highlight={highlight} onAnswerSelected={onAnswerSelected} />
-      <Continue show={highlight === 'correct'} onContinue={on} />
+      <Continue show={highlight === 'correct'} onContinue={onContinue} />
       <p><Link to="/add">Add an author</Link></p>
       <Footer />
     </div>
